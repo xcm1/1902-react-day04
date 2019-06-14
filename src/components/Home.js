@@ -16,13 +16,19 @@ class Com extends Component {
     }))
   }
 
+  getCountFn (data) {
+    this.setState({
+      count: data
+    })
+  }
+
   render() {
     return (
       <div className="box">
         <header className="header">首页头部</header>
         <div className="content">
-          首页内容
-          <ProList prolist = { this.state.prolist }/>
+          首页内容 ---{ this.state.count }
+          <ProList prolist = { this.state.prolist } getCountFn = { this.getCountFn.bind(this) }/>
         </div>
       </div>
     )
